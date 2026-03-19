@@ -1,7 +1,3 @@
 [build]
 publish = "dist"
-command = "pnpm run build"
-
-[build.environment]
-  NODE_VERSION = "22"
-  NETLIFY_BUILD_VERSION = "35.8.0"  # 你之前成功的版本
+command = "pnpm run build && node fix-edge-bundle.mjs"
