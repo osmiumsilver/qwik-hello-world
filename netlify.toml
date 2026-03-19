@@ -1,3 +1,7 @@
 [build]
 publish = "dist"
-  command = "pnpm run build && node -e \"const fs=require('fs'),path=require('path'),os=require('os');const tmp=os.tmpdir();const dirs=fs.readdirSync(tmp).filter(d=>d.startsWith('tmp-'));dirs.forEach(d=>{try{console.log('=== '+d+' ===');fs.readdirSync(path.join(tmp,d)).forEach(f=>console.log(' ',f));}catch(e){}})\""
+command = "pnpm run build"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NETLIFY_BUILD_VERSION = "35.8.0"  # 你之前成功的版本
